@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/ico" href="logo.png">
+  <title>CSE143: Jurassic Challenge</title>
+  <style>
+  body {
+font-family: 'Bangers', cursive;
+  }
+  .parallax {
+    /* The image used */
+    background-image: url("img/bg.jpg");
+
+    /* Set a specific height */
+    min-height: 200px;
+
+    /* Create the parallax scrolling effect */
+    display: none;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .button {
+  border-radius: 8px;
+  padding: 14px 40px;
+  font-size: 24px;
+  background-color: #f44336;
+  }
+
+  .green {
+    background-color: #4CAF50;
+  }
+  .yellow {
+    background-color: #ffd85e;
+  }
+  #dialogue {
+    padding: 100px;
+  }
+  </style>
+</head>
+<body>
+
+
+
+<div style="height:900px;background-color:white;font-size:36px">
+  <div id="goodbye"></div>
+  <div class="context">
+  <div id="more_info"></div>
+
+
+  <div id="dino" style="padding: 100px;">
+
+
+    <table>
+      <tr>
+        <td><span name="dino1"><img src="img/ankylosaurus_on.png" onclick="removeDino(this)" width="250px"/><span></td>
+        <td><span name="dino1"><img src="img/triceratops_on.png" onclick="removeDino(this)" width="250px"/><span></td>
+          <td><span name="dino1"><img src="img/trex_on.png" onclick="removeDino(this)" width="250px"/><span></td>
+            <td><span name="dino1"><img src="img/indoraptor_on.png" onclick="removeDino(this)" width="250px"/><span></td>
+        <td>
+      </tr>
+      <tr>
+
+          <td><span name="dino1"><img src="img/gallimimus_on.png" onclick="removeDino(this)" width="250px"/><span></td>
+            <td><span name="dino1"><img src="img/brachiosaurus_on.png" onclick="removeDino(this)" width="250px"/><span></td>
+              <td><span name="dino1"><img src="img/ankylosaurus_on.png" onclick="removeDino(this)" width="250px"/><span></td>
+                <td><span name="dino1"><img src="img/apatosaurus_on.png" onclick="removeDino(this)" width="250px"/><span></td>
+      </tr>
+
+    </table>
+
+<br><br><br>
+    <center>  <button onclick="location.href='end.html';" class="button green">Finish</button></center>
+
+
+  </div>
+  <div class="info">
+    <br>
+    <center>
+    <img src="welcome.png" width="40%"/><br><br>
+    <button onclick="startTheStuff()" class="button">Play</button>
+
+
+    <audio id="myAudio">
+    <source src="horse.ogg" type="audio/ogg">
+    <source src="theme.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+    </audio>
+    <br><br>
+
+    <button onclick="playAudio()" class="button green">Play Audio</button>
+    <button onclick="pauseAudio()" class="button green">Pause Audio</button>
+    </center>
+
+
+    <script>
+    var x = document.getElementById("dino");
+    x.style.display = "none";
+
+
+
+    function startTheStuff() {
+        var person = prompt("What's your name?");
+
+        var stuffToHide = document.getElementsByClassName("info");
+
+        for(var i=0; i < stuffToHide.length; i++) {
+            stuffToHide[i].style.display = "none";
+        }
+        document.getElementById("more_info").innerHTML = '<div id="dialogue"><p><img src="img/owen_on.png" width="2%"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Welcome, ' + person + '! We need to kill some dinosaurs that are running loose in Jurassic Park!</p></div>';
+        document.getElementById("dino").style.display = "block";
+      }
+
+
+      var x = document.getElementById("myAudio");
+      function playAudio() {
+        x.play();
+      }
+
+      function pauseAudio() {
+        x.pause();
+      }
+
+
+
+      function removeDino(bro) {
+              console.log("bro");
+              bro.src = 'logo.png'
+              console.log(bro.src);
+          }
+
+      var y = document.getElementById("dino");
+      y.style.display = "none";
+
+    </script>
+
+  </div>
+</div>
+</div>
+
+
+</body>
+</html>
