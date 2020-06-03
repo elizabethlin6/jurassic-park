@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/ico" href="img/logo.png">
+  <title>CSE143: Jurassic Challenge</title>
+</head>
+<style>
+  .button {
+  border-radius: 8px;
+  padding: 14px 40px;
+  font-size: 24px;
+  background-color: #f44336;
+  }
+
+  .green {
+    background-color: #4CAF50;
+  }
+  .yellow {
+    background-color: #ffd85e;
+  }
+  #dialogue {
+    padding: 100px;
+  }
+</style>
+
+<div>
+
+
+  <div id="more_info">
+  </div>
+
+  <div class="info">
+
+
+
+    <center><img src="welcome.png" width="50%"/></center>
+
+    <button onclick="startTheStuff()" class="button">Play</button>
+
+
+    <audio id="myAudio">
+    <source src="horse.ogg" type="audio/ogg">
+    <source src="theme.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+    </audio>
+    <br><br>
+
+
+  <script>
+        var x = document.getElementById("myAudio");
+        console.log(x);
+        console.log("hello");
+        function playAudio() {
+          x.play();
+        }
+
+        function pauseAudio() {
+          x.pause();
+        }
+
+        function removeDino(dino) {
+            dino.src = 'logo.png';
+        }
+
+
+        function startTheStuff() {
+          var person = prompt("What's your name?");
+          console.log(person);
+
+          var stuffToHide = document.getElementsByClassName("info");
+
+          for(var i=0; i < stuffToHide.length; i++) {
+              stuffToHide[i].style.display = "none";
+          }
+          document.getElementById("more_info").innerHTML = '<p>hello world</p><img src="img/trex_on.png"/> <table> <tr> <td><span name="dino1"><img src="img/ankylosaurus_on.png" onclick="removeDino(this)" width="250px"/><span></td> <td><span name="dino1"><img src="img/triceratops_on.png" onclick="removeDino(this)" width="250px"/><span></td> <td><span name="dino1"><img src="img/trex_on.png" onclick="removeDino(this)" width="250px"/><span></td> <td><span name="dino1"><img src="img/indoraptor_on.png" onclick="removeDino(this)" width="250px"/><span></td> </tr> <tr> <td><span name="dino1"><img src="img/gallimimus_on.png" onclick="removeDino(this)" width="250px"/><span></td> <td><span name="dino1"><img src="img/brachiosaurus_on.png" onclick="removeDino(this)" width="250px"/><span></td> <td><span name="dino1"><img src="img/ankylosaurus_on.png" onclick="removeDino(this)" width="250px"/><span></td> <td><span name="dino1"><img src="img/apatosaurus_on.png" onclick="removeDino(this)" width="250px"/><span></td></tr></table>';
+          // document.getElementById("dino").style.display = "block";
+        }
+  </script>
+
+    <button onclick="playAudio()" class="button green">Play Audio</button>
+    <button onclick="pauseAudio()" class="button green">Pause Audio</button>
+    </center>
+
+  </div>
+
+
+</div>
+
+
+<!-- <script>
+      var x = document.getElementById("myAudio");
+      console.log(x);
+      console.log("hello");
+      function playAudio() {
+        x.play();
+      }
+
+      function pauseAudio() {
+        x.pause();
+      }
+</script> -->
+
+
+
+
+
+
+
+  </body>
+  </html>
